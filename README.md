@@ -1,7 +1,7 @@
 #Script Project Readme
 ***
 
-![Project icon](https://github.com/C-L-G/scripts/resource/picture/project.png)
+![Project icon](https://raw.githubusercontent.com/C-L-G/scripts/master/resource/picture/project.png)
         [帮助](https://guides.github.com/activities/hello-world/)
 ***
 #概览
@@ -41,4 +41,4 @@
 你可以给<303526279@qq.com>发邮件。<br>
 当然如果你需要任何帮助，那么你可以点击`帮助`按钮进行相关查询。   
 ***
-![sined](https://github.com/C-L-G/scripts/resource/picture/sined.png)
+![signed](https://raw.githubusercontent.com/C-L-G/scripts/master/resource/picture/signed.png)
