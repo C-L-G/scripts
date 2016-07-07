@@ -2,8 +2,10 @@
 ***
 
 ![Project icon](https://raw.githubusercontent.com/C-L-G/scripts/master/resource/picture/project.png)
-        [**帮助**](https://guides.github.com/activities/hello-world/)
-***
+        [**GitHub帮助**](https://guides.github.com/activities/hello-world/)<br>
+        [**Markdown帮助**](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)<br>
+ 
+ ***
 #概览
 
 你可以点击[@Github/C-L-G/Scripts](https://github.com/C-L-G/scripts])进行工程阅览。
@@ -32,6 +34,7 @@
 * ~~**----mkdir**~~ 
 * ~~----mkdir/svn_director_create.pl~~
 * **----perl**
+* *----perl/svn_director_create.pl*
 * **----resource**
 * **----resource/picture**
 * ----resource/picture/project.png
@@ -89,8 +92,11 @@ module verilog_top(
 
 #任务记录
 ***
+
 - [x] 目录创建脚本更新<br>
 - [ ] log自动检查脚本更新<br>
+- [ ] 其他
+
 ***
 
 #其他 
