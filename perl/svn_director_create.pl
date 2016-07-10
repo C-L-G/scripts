@@ -1,4 +1,5 @@
-#/usr/bin/perl
+#!/user/bin/perl
+#!c:\Perl\bin\perl
 #---------------------------------------------------------------------------------------------------- 
 #------------------Copyright © 2016 C-L-G.FPGA1988.Roger Wang. All rights reserved-------------------
 #
@@ -32,6 +33,8 @@
 #02-07-2016 - Roger Wang - Add the file header and do some modification on the mkdir.
 #01-07-2016 - Roger Wang - The initial version.
 #---------------------------------------------------------------------------------------------------- 
+use File::Path;
+
 
 #---------------------------------------------------------------------------------------------------- 
 #---------------------------------------------------------------------------------------------------- 
@@ -40,17 +43,18 @@
 #---------------------------------------------------------------------------------------------------- 
 $os_get = "$^o"; 
 
-
 #---------------------------------------------------------------------------------------------------- 
 #1.1 the test variable
 #---------------------------------------------------------------------------------------------------- 
 #$os_get = "linux Centos 5.7"; 
+$os_get = "Win32";
 
 print "Now you are run the $os_get os.\n"; 
-$project_path = "/Users/bwang/projects";
+#$project_path = "/Users/bwang/projects";
+$project_path = "e:/projects";
 print "the project path = $project_path\n";
 $project_name = "$project_path/asic_project";
-$verif_arch   = "{bin,flist,model,tb,tc,wave}";
+#$verif_arch   = "{bin,flist,model,tb,tc,wave}";
 
 #---------------------------------------------------------------------------------------------------- 
 #---------------------------------------------------------------------------------------------------- 
@@ -58,55 +62,54 @@ $verif_arch   = "{bin,flist,model,tb,tc,wave}";
 #---------------------------------------------------------------------------------------------------- 
 #---------------------------------------------------------------------------------------------------- 
 
-system "mkdir $project_name";
-system "mkdir $project_name/branches";
-system "mkdir $project_name/tags";
-system "mkdir $project_name/trunk";
-system "mkdir $project_name/trunk/doc";
-system "mkdir $project_name/trunk/doc/spec";
-system "mkdir $project_name/trunk/env";
-system "mkdir $project_name/trunk/ic";
-system "mkdir $project_name/trunk/ic/apr";
-system "mkdir $project_name/trunk/ic/digital";
-system "mkdir $project_name/trunk/ic/lib";
-system "mkdir $project_name/trunk/ic/fullchip";
-system "mkdir $project_name/trunk/ic/typeout";
+mkdir "$project_name";
+mkdir "$project_name/branches";
+mkdir "$project_name/tags";
+mkdir "$project_name/trunk";
+mkdir "$project_name/trunk/doc";
+mkdir "$project_name/trunk/doc/spec";
+mkdir "$project_name/trunk/env";
+mkdir "$project_name/trunk/ic";
+mkdir "$project_name/trunk/ic/apr";
+mkdir "$project_name/trunk/ic/digital";
+mkdir "$project_name/trunk/ic/lib";
+mkdir "$project_name/trunk/ic/fullchip";
+mkdir "$project_name/trunk/ic/typeout";
 #---------------------------------------------------------------------------------------------------- 
 #2.1 The digital director
 #---------------------------------------------------------------------------------------------------- 
-system "mkdir $project_name/trunk/ic/digital/formal";
-system "mkdir $project_name/trunk/ic/digital/rtl";
-system "mkdir $project_name/trunk/ic/digital/sta";
-system "mkdir $project_name/trunk/ic/digital/sta/pre_layout";
-system "mkdir $project_name/trunk/ic/digital/sta/post_layout";
-system "mkdir $project_name/trunk/ic/digital/syn";
-system "mkdir $project_name/trunk/ic/digital/syn/reports";
-system "mkdir $project_name/trunk/ic/digital/syn/results";
-system "mkdir $project_name/trunk/ic/digital/syn/scripts";
+mkdir "$project_name/trunk/ic/digital/formal";
+mkdir "$project_name/trunk/ic/digital/rtl";
+mkdir "$project_name/trunk/ic/digital/sta";
+mkdir "$project_name/trunk/ic/digital/sta/pre_layout";
+mkdir "$project_name/trunk/ic/digital/sta/post_layout";
+mkdir "$project_name/trunk/ic/digital/syn";
+mkdir "$project_name/trunk/ic/digital/syn/reports";
+mkdir "$project_name/trunk/ic/digital/syn/results";
+mkdir "$project_name/trunk/ic/digital/syn/scripts";
 #2.1.1 you can use -p to create the director
-#system "mkdir $project_name/trunk/ic/digital/verif";
-#system "mkdir $project_name/trunk/ic/digital/verif/bin";
-#system "mkdir $project_name/trunk/ic/digital/verif/flist";
-#system "mkdir $project_name/trunk/ic/digital/verif/tb";
-#system "mkdir $project_name/trunk/ic/digital/verif/tc";
-#system "mkdir $project_name/trunk/ic/digital/verif/wave";
-system "mkdir -p $project_name/trunk/ic/digital/verif/$verif_arch";
-system "mkdir $project_name/trunk/ic/digital/power";
+mkdir "$project_name/trunk/ic/digital/verif";
+mkdir "$project_name/trunk/ic/digital/verif/bin";
+mkdir "$project_name/trunk/ic/digital/verif/flist";
+mkdir "$project_name/trunk/ic/digital/verif/tb";
+mkdir "$project_name/trunk/ic/digital/verif/tc";
+mkdir "$project_name/trunk/ic/digital/verif/wave";
+mkdir "$project_name/trunk/ic/digital/power";
 #---------------------------------------------------------------------------------------------------- 
 #2.2 The fpga director
 #---------------------------------------------------------------------------------------------------- 
-system "mkdir $project_name/trunk/ic/fpga";
-system "mkdir $project_name/trunk/ic/fpga/constraint";
-system "mkdir $project_name/trunk/ic/fpga/prj";
-system "mkdir $project_name/trunk/ic/fpga/cfg";
-system "mkdir $project_name/trunk/ic/fpga/src";
-#system "mkdir $project_name/trunk/ic/fpga/verif";
-#system "mkdir $project_name/trunk/ic/fpga/verif/bin";
-#system "mkdir $project_name/trunk/ic/fpga/verif/flist";
-#system "mkdir $project_name/trunk/ic/fpga/verif/tb";
-#system "mkdir $project_name/trunk/ic/fpga/verif/tc";
-#system "mkdir $project_name/trunk/ic/fpga/verif/wave";
-system "mkdir -p $project_name/trunk/ic/fpga/verif/$verif_arch";
+mkdir "$project_name/trunk/ic/fpga";
+mkdir "$project_name/trunk/ic/fpga/constraint";
+mkdir "$project_name/trunk/ic/fpga/prj";
+mkdir "$project_name/trunk/ic/fpga/cfg";
+mkdir "$project_name/trunk/ic/fpga/src";
+mkdir "$project_name/trunk/ic/fpga/verif";
+mkdir "$project_name/trunk/ic/fpga/verif/bin";
+mkdir "$project_name/trunk/ic/fpga/verif/flist";
+mkdir "$project_name/trunk/ic/fpga/verif/tb";
+mkdir "$project_name/trunk/ic/fpga/verif/tc";
+mkdir "$project_name/trunk/ic/fpga/verif/wave";
+#mkdir -p "$project_name/trunk/ic/fpga/verif/$verif_arch";
 
 #---------------------------------------------------------------------------------------------------- 
 #2.3 The tree function
@@ -125,6 +128,8 @@ elsif($os_get =~ m/.*(OUT).*/)
 else
   {
     print "Sorry,I can't recognize the os.\n";
+    print "os = $get_os.\n";
+    system "tree $project_name";
   }
 print "Thank you for use the script!\n";
 
